@@ -1,0 +1,103 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.tabs {
+  display: flex;
+  background: #ccc;
+}
+.tabs button {
+  padding: 10px 20px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+}
+.tabs button:hover {
+  background: #bbb;
+}
+.toolbar {
+  background: #eee;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.editor {
+  min-height: 80vh;
+  padding: 20px;
+  outline: none;
+  font-size: 16px;
+}
+body.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+.editor.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.comment:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+#main-content {
+  display: flex;
+}
+.comment-box {
+  width: 250px;
+  background: #f9f9f9;
+  border-left: 2px solid #ccc;
+  padding: 10px;
+  font-size: 14px;
+  overflow-y: auto;
+}
+.comment-entry {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+.comment-entry strong {
+  display: block;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.comment-box {
+  position: fixed;
+  top: 45px;
+  right: 0;
+  height: calc(100vh - 45px);
+  overflow-y: auto;
+  background: #f9f9f9;
+  border-left: 2px solid #ccc;
+  padding: 10px;
+  width: 280px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.05);
+  z-index: 999;
+}
+.editor {
+  margin-right: 300px; /* Platz für Kommentarbereich */
+}
+
+.comment-entry textarea {
+  width: 100%;
+  height: 60px;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.comment-entry button {
+  margin-right: 5px;
+  margin-top: 5px;
+  font-size: 12px;
+}

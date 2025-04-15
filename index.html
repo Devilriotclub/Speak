@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SchreibApp Pro – Registerkarten</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="tabs">
+    <button onclick="showTab('start')">Start</button>
+    <button onclick="showTab('einfügen')">Einfügen</button>
+    <button onclick="showTab('extras')">Extras</button>
+<button onclick="showTab('sprachen')">Sprachen</button>
+<button onclick="showTab('layout')">Layout</button>
+<button onclick="showTab('kommentare')">Kommentare</button>
+  </div>
+
+  <!-- START -->
+  <div class="toolbar tab-content" id="tab-start">
+    <select id="fontFamily">
+<option value="">Schriftart</option>
+<option value="Arial">Arial</option>
+<option value="Calibri">Calibri</option>
+<option value="Cambria">Cambria</option>
+<option value="Candara">Candara</option>
+<option value="Comic Sans MS">Comic Sans MS</option>
+<option value="Courier New">Courier New</option>
+<option value="Georgia">Georgia</option>
+<option value="Garamond">Garamond</option>
+<option value="Impact">Impact</option>
+<option value="Lucida Console">Lucida Console</option>
+<option value="Palatino Linotype">Palatino Linotype</option>
+<option value="Segoe UI">Segoe UI</option>
+<option value="Tahoma">Tahoma</option>
+<option value="Times New Roman">Times New Roman</option>
+<option value="Trebuchet MS">Trebuchet MS</option>
+<option value="Verdana">Verdana</option>
+</select>
+    <select id="fontSize">
+<option value="7px">7px</option>
+<option value="8px">8px</option>
+<option value="9px">9px</option>
+<option value="10px">10px</option>
+<option value="11px">11px</option>
+<option value="12px">12px</option>
+<option value="13px">13px</option>
+<option value="14px">14px</option>
+<option value="15px">15px</option>
+<option value="16px">16px</option>
+<option value="17px">17px</option>
+<option value="18px">18px</option>
+<option value="19px">19px</option>
+<option value="20px">20px</option>
+<option value="21px">21px</option>
+<option value="22px">22px</option>
+<option value="23px">23px</option>
+<option value="24px">24px</option>
+<option value="25px">25px</option>
+<option value="26px">26px</option>
+<option value="27px">27px</option>
+<option value="28px">28px</option>
+<option value="29px">29px</option>
+<option value="30px">30px</option>
+<option value="31px">31px</option>
+<option value="32px">32px</option>
+<option value="33px">33px</option>
+<option value="34px">34px</option>
+<option value="35px">35px</option>
+<option value="36px">36px</option>
+<option value="37px">37px</option>
+<option value="38px">38px</option>
+<option value="39px">39px</option>
+<option value="40px">40px</option>
+<option value="41px">41px</option>
+<option value="42px">42px</option>
+<option value="43px">43px</option>
+<option value="44px">44px</option>
+<option value="45px">45px</option>
+<option value="46px">46px</option>
+<option value="47px">47px</option>
+<option value="48px">48px</option>
+<option value="49px">49px</option>
+<option value="50px">50px</option>
+<option value="51px">51px</option>
+<option value="52px">52px</option>
+<option value="53px">53px</option>
+<option value="54px">54px</option>
+<option value="55px">55px</option>
+<option value="56px">56px</option>
+<option value="57px">57px</option>
+<option value="58px">58px</option>
+<option value="59px">59px</option>
+<option value="60px">60px</option>
+<option value="61px">61px</option>
+<option value="62px">62px</option>
+<option value="63px">63px</option>
+<option value="64px">64px</option>
+<option value="65px">65px</option>
+<option value="66px">66px</option>
+<option value="67px">67px</option>
+<option value="68px">68px</option>
+<option value="69px">69px</option>
+<option value="70px">70px</option>
+<option value="71px">71px</option>
+<option value="72px">72px</option>
+<option value="73px">73px</option>
+<option value="74px">74px</option>
+<option value="75px">75px</option>
+<option value="76px">76px</option>
+<option value="77px">77px</option>
+<option value="78px">78px</option>
+<option value="79px">79px</option>
+<option value="80px">80px</option>
+<option value="81px">81px</option>
+<option value="82px">82px</option>
+<option value="83px">83px</option>
+<option value="84px">84px</option>
+<option value="85px">85px</option>
+<option value="86px">86px</option>
+<option value="87px">87px</option>
+<option value="88px">88px</option>
+<option value="89px">89px</option>
+<option value="90px">90px</option>
+<option value="91px">91px</option>
+<option value="92px">92px</option>
+    </select>
+    <button onclick="format('bold')"><b>B</b></button>
+    <button onclick="format('italic')"><i>I</i></button>
+    <button onclick="format('underline')"><u>U</u></button>
+    <button onclick="format('justifyLeft')">⬅️</button>
+    <button onclick="format('justifyCenter')">⏺️</button>
+    <button onclick="format('justifyRight')">➡️</button>
+    <input type="color" onchange="setColor(this.value)" title="Textfarbe">
+    <input type="color" onchange="setHighlight(this.value)" title="Markierung">
+  </div>
+
+  <!-- EINFÜGEN -->
+  <div class="toolbar tab-content" id="tab-einfügen" style="display:none">
+    <input type="file" id="fileInput" multiple onchange="handleFileUpload(this.files)">
+    <button onclick="addTodo()">📝 To-Do</button>
+    <button onclick="insertLink()">🔗 Link</button>
+  </div>
+
+  <!-- EXTRAS -->
+  <div class="toolbar tab-content" id="tab-extras" style="display:none">
+    <button onclick="toggleDarkMode()">🌗 Dark Mode</button>
+    <button onclick="speakText()">🔊 Vorlesen</button>
+    <span id="wordCount">Wörter: 0</span>
+    <input type="text" id="searchInput" placeholder="🔍 Suchen..." oninput="highlightSearch(this.value)">
+    <button onclick="window.print()">🖨️ Drucken</button>
+    <button onclick="shareLink()">📤 Teilen</button>
+  </div>
+
+  
+  <!-- LAYOUT -->
+  <div class="toolbar tab-content" id="tab-layout" style="display:none">
+    <button onclick="setSpacing('single')">🧍 Einfacher Zeilenabstand</button>
+    <button onclick="setSpacing('double')">👥 Doppelter Zeilenabstand</button>
+    <button onclick="setMargin('small')">↔️ Kleine Ränder</button>
+    <button onclick="setMargin('large')">↔️ Große Ränder</button>
+  </div>
+  
+  <!-- KOMMENTARE -->
+  <div class="toolbar tab-content" id="tab-kommentare" style="display:none">
+    <button onclick="addComment()">💬 Kommentar hinzufügen</button>
+    <button onclick="removeComments()">🗑️ Kommentare löschen</button>
+  </div>
+  
+  <div id="main-content">
+    
+  <!-- SPRACHEN -->
+  <div class="toolbar tab-content" id="tab-sprachen" style="display:none">
+    <label for="languageSelect">🌍 Sprache wählen:</label>
+    <select id="languageSelect" onchange="setLanguage(this.value)">
+      <option value="de-DE">🇩🇪 Deutsch</option>
+      <option value="en-US">🇬🇧 Englisch</option>
+      <option value="fr-FR">🇫🇷 Französisch</option>
+      <option value="pl-PL">🇵🇱 Polnisch</option>
+      <option value="nl-NL">🇳🇱 Niederländisch</option>
+    </select>
+  </div>
+  <div id="editor" class="editor" contenteditable="true"></div>
+    
+    <div id="commentBox" class="comment-box"></div>
+  </div>
+    
+    
+    
+  <script src="script.js"></script>
+</body>
+</html>
